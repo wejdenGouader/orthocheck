@@ -1,0 +1,41 @@
+PROCEDURE dot_product(v1,v2: ARRAY_of float, var ps:float)
+VAR
+    i: INTEGER;
+BEGIN
+ps:=0
+    FOR i FROM 0 TO v1.length-1  DO
+    ps:=ps+(v1[i]*v2[i])
+    END_FOR
+END
+ALGORITHM ortho
+VAR
+    l1,l2 : ARRAY_OF arrays;
+    ps: float;
+    i,n: INTEGER;
+
+BEGIN
+    FOR i FROM 0 TO n-1  DO
+        IF (l1[i].length=l2[i]length) THEN
+            //dot_product(l1[i],l2[i,ps]);
+            ps:=dot_product(l1[i],l2[i])
+            IF (ps=0) THEN
+                write ('orthogonal')
+            ELSE
+               write ('non orthogonal')
+            END_IF
+ELSE write ('error')
+        END_IF
+    END_FOR
+END
+
+//function
+FUNCTION dot_product(v1,v2: ARRAY_OF float) : float;
+VAR
+    i: integer;
+    ps: float:=0;
+BEGIN
+    FOR i FROM 0 TO V1.length-1  DO
+        ps:= ps+(v1[i]*v2[i])
+    END_FOR
+    RETURN ps ;
+END
